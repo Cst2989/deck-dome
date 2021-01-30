@@ -8,9 +8,11 @@ import router from './routes.ts';
 import _404 from './controllers/404.ts';
 // @ts-ignore
 import errorHandler from './controllers/errorHandler.ts';
+// @ts-ignore
+import { oakCors } from 'https://deno.land/x/cors/mod.ts';
 
 const app = new Application();
-
+app.use(oakCors()); // Enable CORS for All Routes
 app.use(errorHandler);
 app.use(router.routes());
 app.use(router.allowedMethods());

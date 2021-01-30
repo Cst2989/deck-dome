@@ -7,7 +7,7 @@ const client = await new Client().connect({
   db: Deno.env.get('DB'),
   hostname: Deno.env.get('HOST'),
   password: Deno.env.get('PASSWORD'),
-  port: Deno.env.get('PORT'),
+  port: 3306,
 });
 
 export default client;
